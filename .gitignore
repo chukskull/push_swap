@@ -1,0 +1,5 @@
+build/
+*.o
+#.gitignore
+push_swap
+.DS_Store
