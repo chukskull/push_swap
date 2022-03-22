@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   used_func.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: snagat <snagat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 20:54:14 by snagat            #+#    #+#             */
-/*   Updated: 2022/03/21 21:34:25 by snagat           ###   ########.fr       */
+/*   Created: 2022/03/21 15:47:42 by snagat            #+#    #+#             */
+/*   Updated: 2022/03/21 16:12:43 by snagat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list.h"
-#include <stdlib.h>
+#include "push_swap.h"
+#include "utils.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+int	ft_get_min(t_list **stack_a)
 {
-	t_list	*temp;
+	t_list	*current;
+	t_item	*item;
+	int		k;
 
-	if (!lst)
-		return ;
-	if (!(*lst))
-		*lst = new;
-	if (!new)
-		return ;
-	temp = ft_lstlast(*lst);
-	temp->next = new;
-	new->next = NULL;
+	current = *stack_a;
+	item = current->content;
+	k = item->val;
+	while (current)
+	{
+		item = current->content;
+		if (item->val < k)
+			k = item->val;
+		current = current->next;
+	}
+	return (k);
 }

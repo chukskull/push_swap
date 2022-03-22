@@ -6,15 +6,15 @@
 /*   By: snagat <snagat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 20:26:24 by snagat            #+#    #+#             */
-/*   Updated: 2022/03/09 21:08:09 by snagat           ###   ########.fr       */
+/*   Updated: 2022/03/21 21:32:13 by snagat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "list.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!lst)

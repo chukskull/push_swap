@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   last_chunk.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: snagat <snagat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 20:54:14 by snagat            #+#    #+#             */
-/*   Updated: 2022/03/21 21:34:25 by snagat           ###   ########.fr       */
+/*   Created: 2022/03/11 21:03:16 by snagat            #+#    #+#             */
+/*   Updated: 2022/03/21 18:03:48 by snagat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list.h"
-#include <stdlib.h>
+#include "push_swap.h"
+#include "utils.h"
+#include <stdio.h>
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	last_chunk(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*temp;
+	int	index;
 
-	if (!lst)
+	index = ft_lstsize(*stack_a);
+	if (index == 0)
 		return ;
-	if (!(*lst))
-		*lst = new;
-	if (!new)
-		return ;
-	temp = ft_lstlast(*lst);
-	temp->next = new;
-	new->next = NULL;
+	pb(stack_a, stack_b, 1);
+	last_chunk(stack_a, stack_b);
 }
